@@ -31,10 +31,6 @@
   clear: both;
 }
 
-.clearfix {
-  *zoom: 1;
-}
-
 /* body */
 body {
   font-family: 'Roboto', sans-serif;
@@ -53,6 +49,7 @@ body {
 }
 
 /* End Global-wrapper */
+
 /* Start Resume sidebar */
 .resume-sidebar {
   background-color: var(--sidebar-bg-color);
@@ -365,17 +362,16 @@ header {
   font-size: 15px;
 }
 
-/*
 /* End Resume main */
-/* Media query */
 
+/* Media query for tablet*/
 @media only screen and (max-width: 992px) {
   .education-year {
     width: 343px;
   }
 
   .sidebar-heading-common {
-    margin-top   : 40px;
+    margin-top   : 25px;
     margin-bottom: 15px;
   }
 
@@ -388,21 +384,23 @@ header {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .global-wrapper {
+    box-shadow: none;
+  }
+}
+
 /* Media query for Mobile devices */
 @media only screen and (max-width: 427px) {
   .resume-container {
     position: relative;
   }
 
-  .global-wrapper {
-    box-shadow: none;
-  }
-
   .resume-sidebar {
     position  : absolute;
-    left      : -242px;
+    left      : -240px;
     transition: all .5s ease-in-out;
-    z-index: 1;
+    z-index   : 1;
   }
 
   .sidebar-heading-common {
@@ -410,16 +408,49 @@ header {
   }
 
   .sidebar-show {
-    left   : 0;
+    left: 0;
+  }
+
+  .resume-inner {
+    width: 400px;
   }
 
   header {
     text-align  : left;
     padding-left: 20px;
+    border-top  : 35px solid var(--title-edge-color);
+    border-left : 13px solid transparent;
+    margin-left : 30px;
+    max-width   : 370px;
+  }
+
+  .styled-header-shape {
+    height   : 35px;
+    display  : inline-block;
+    transform: skew(19deg);
+  }
+
+  .styled-header-shape:nth-child(1) {
+    top             : -35px;
+    left            : 0px;
+    background-color: transparent;
+  }
+
+  .styled-header-shape:nth-child(2) {
+    top  : -35px;
+    left : -35px;
+    width: 9px;
+  }
+
+  .styled-header-shape:nth-child(3) {
+    top  : -35px;
+    left : -23px;
+    width: 12px;
   }
 
   .header-title {
-    bottom: 10px;
+    bottom   : 0px;
+    font-size: 13px;
   }
 
   .hobbies {
@@ -434,22 +465,41 @@ header {
   .profile-personal-info-inner,
   .profile-education-info-inner,
   .profile-work-exp-inner {
-    padding: 0px 15px 10px 15px;
+    padding: 0px 5px 10px 15px;
+  }
+
+  .profile-details,
+  .profile-details-sub,
+  .education-detail-des,
+  .work-exp-logo>p {
+    font-size: 13px;
   }
 
   .education-detail-wrap {
     flex-direction: column;
   }
 
+  .education-details {
+    margin-left: 0;
+  }
+
   .profile-section-heading {
-    margin-right: 50px;
+    width       : 365px;
+    margin-right: 100px;
     margin-top  : 25px;
+    font-size   : 15px;
   }
 
   .menu-btn {
     position: absolute;
-    bottom  : -10px;
+    bottom  : -18px;
     right   : 15px;
+  }
+
+  .work-exp-wrap {
+    flex-direction: column;
+    align-items   : center;
+    padding       : 8px 0;
   }
 
   .menu-btn-burger {
@@ -480,8 +530,7 @@ header {
   }
 
   .menu-btn.open .menu-btn-burger {
-    background  : transparent;
-    /* transform: translateX(-25px); */
+    background: transparent;
   }
 
   .menu-btn.open .menu-btn-burger::before {
@@ -494,11 +543,22 @@ header {
 }
 
 @media only screen and (max-width: 375px) {
-  header {
-    margin-left: 50px;
-  }
-
   .education-details {
     margin-left: 0;
+  }
+
+  .resume-inner {
+    width: 315px;
+  }
+
+  .global-wrapper {
+    box-shadow: none;
+  }
+
+  .profile-section-heading {
+    width       : 310px;
+    margin-right: 100px;
+    margin-top  : 25px;
+    font-size   : 15px;
   }
 }
