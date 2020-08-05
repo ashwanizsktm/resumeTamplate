@@ -12,3 +12,24 @@ $('.skill-per').each(function () {
     }
   });
 });
+
+// Menu Animation.
+const sidebar = document.querySelector('.resume-sidebar');
+const menuBtn = document.querySelector('.menu-btn');
+let menuOpen = false;
+
+menuBtn.addEventListener('click', () => {
+
+  if (!menuOpen) {
+    console.log('hello');
+    menuBtn.classList.add('open');
+    sidebar.classList.add('sidebar-show');
+    menuOpen = true;
+  }
+  
+  else {
+    sidebar.classList.remove('sidebar-show');
+    menuBtn.classList.remove('open');
+    menuOpen = false;
+  }
+});
